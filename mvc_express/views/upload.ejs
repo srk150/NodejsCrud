@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Update</title>
+    <style>
+        body{
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    
+    <h1>Profile Update
+           <a href="/user/userlist">User List</a>
+    </h1>
+
+    <form method="POST" action="/user/do_upoad_file" enctype="multipart/form-data">
+    <div>
+        <input type="file" name="profile" required>
+
+        <input type="submit" name="submit" value="Upload" />
+
+        <% if(success != '') { %>
+        <h4 style="color: green; font-family: Arial, Helvetica, sans-serif;"><%= success %> </h4>
+       <% } %>
+    </div>
+    <div>
+         <center>
+         <br><br><br><br>
+         
+         <% items.forEach(function(row) { %>
+
+         <img width="300px" height="300px" src="http://localhost:3000/uploads/<%= row.imagename %>">
+
+
+        <% }) %>
+         
+         </center>
+    </div>
+</form>
+
+    </center>
+
+
+</body>
+</html>

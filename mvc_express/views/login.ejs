@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>login</h1>
+   
+   
+   <% if(success != '') { %>
+    <h4 style="color: green; font-family: Arial, Helvetica, sans-serif;"><%= success %> </h4>
+   <% } %>
+
+
+
+
+<form action="/user/dologin" method="POST">
+    <input type="text" name="email"
+        placeholder="Email"><br>
+    <input type="password" name="password"
+        placeholder="password"><br>
+    <button type="submit">login</button>
+ <a href="/user/signup">Sign up</a>
+
+</form>
+ 
+
+    </center>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body{
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+    <center>
+     <h1>Update User
+           <a href="/user/home">Home</a>
+     </h1>
+
+    <% if(success != '') { %>
+        <h4 style="color: green; font-family: Arial, Helvetica, sans-serif;"><%= success %> </h4>
+    <% } %>
+    
+    <form method="POST" action="/user/updateUser">
+    <input type="text" name="name" value="<%= users.name %>" placeholder="Full Name" required>
+    <input type="email" name="email" value="<%= users.email %>" placeholder="Email" required><br>
+    <input type="number" min="0" name="phone" placeholder="Mobile" value="<%= users.phone %>" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="hidden" name="id" value="<%= users.id %>">
+    <br>
+    <br>
+    <button type="submit">Update</button>
+    
+
+
+    </form>
+    </center>
+
+
+</body>
+</html>
