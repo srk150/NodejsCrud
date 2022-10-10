@@ -1,4 +1,45 @@
 const UserModel = require('../model/user')
+const bcrypt    = require('bcrypt');
+const {createTokens,validateToken } = require('../jwt');
+
+
+//login api using jwt
+exports.jwtLogin = async(req, res)=>{
+const {email, password} = req.body;
+
+const user = await UserModel.findOne({ where:{ email:email } });
+
+if(!user) res.status(400).json({ error: "User Does not exist!" });
+
+const dbPassword = user.password;
+bcrypt.compare(password,dbPassword).then((match)=>{
+if(!match){
+    res
+    .status(400)
+    .json({ error: "Wrong Email or password!" });
+
+}else{
+      
+     const accessToken = createTokens(user);
+     res.cookie("access-token",accessToken,{
+        maxAge:60*60*24*30*1000,
+        httpOnly:true,
+
+     });
+
+     res.status(200).json("Loged IN");
+     
+     }
+
+ });
+}
+//for aunthenticate profile
+
+exports.profile = async (req,res) => {
+    
+res.json('Profile Page');
+
+};
 
 // Create and Save a new user
 exports.create = async (req, res) => {

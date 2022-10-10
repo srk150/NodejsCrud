@@ -1,6 +1,7 @@
 const express        = require('express')
 const UserController = require('../controller/user')
 const WebController  = require('../controller/web')
+
 const router         = express.Router();
 
 router.get('/', UserController.findAll);
@@ -8,6 +9,10 @@ router.get('/getuser/:id', UserController.findOne);
 router.post('/create', UserController.create);
 router.patch('/upduser/:id', UserController.update);
 router.delete('/deluser/:id', UserController.destroy);
+//jwt login api 
+router.post('/jwtLogin', UserController.jwtLogin);
+router.get('/profile',UserController.profile);
+
 
 //ejs template
 router.get('/login', WebController.login);

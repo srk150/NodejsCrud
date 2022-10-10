@@ -9,7 +9,8 @@ const bcrypt     = require('bcryptjs');
 const mongoose   = require('mongoose');
 
 var session      = require('express-session');
-var cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
+
 var flash        = require('connect-flash');
 
 const multer     = require('multer');
@@ -22,6 +23,7 @@ const app        = express();
 app.set('view engine', 'ejs');
 
 app.use(cookieParser('secret'));
+
 
 app.use(session({cookie: { maxAge: 60000 }}));
 app.use(session({secret:'ssshhhhh'}));
