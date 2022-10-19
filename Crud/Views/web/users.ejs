@@ -1,0 +1,71 @@
+ <%- include("partials/header") %>
+
+<div id="page">
+<div class="container">
+<div class="page-menu">
+<nav class="navbar navbar-expand-lg">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarPage" aria-controls="navbarPage" aria-expanded="false"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse justify-content-center" id="navbarPage">
+<ul class="navbar-nav">
+
+<li class="nav-item active"><a class="nav-link" href="addemployee">Add Employee</a></li>
+
+</ul>
+</div>
+</nav>
+</div>
+
+
+<div class="mt-5">
+<div class="title mb-4 text-center"><h4>Employee Details</h4></div>
+
+
+<div class="table-content table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Employee Name</th>
+<th>Email</th>
+<th>Designation</th>
+<th>Department</th>
+<th>Role</th>
+<th>Salary</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<td data-label="Full Name">Srk</td>
+<td data-label="Email"><span class="email">Srk@gmail.com</span></td>
+<td data-label="Item ID">PHP Developer</td>
+<td data-label="Item ID">IT</td>
+<td data-label="Item ID">Admin</td>
+
+<td data-label="DOB">50000</td>
+
+<td data-label="Status"><span class="badge badge-success">Active</span></td>
+<td data-label="Status">
+
+	<span class="badge badge-info"><a href="edit_employee">Edit</a></span>
+
+   <span class="badge badge-danger"><a href="del_employee/" onclick="return confirm('Are you sure, you want to delete this employee?');">Delete</a></span>
+   
+</td>
+
+</tr>
+
+
+
+
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+ <%- include("partials/footer") %>

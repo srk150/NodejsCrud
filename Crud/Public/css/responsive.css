@@ -1,0 +1,79 @@
+/* #Media Queries
+================================================== */
+/* END__ */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.login-wrapper  .form-control, .login-wrapper .btn{ height:60px;}
+.sidebar{ left:-240px; z-index:230;}
+.sidebar.active{ left:0;}
+.wrapper, .footer{ margin:0;}
+.header{ padding:0 15px;}
+.header .logo{ margin-left:30px;}
+.wrapper{ padding:104px 24px 24px 24px;}
+.wrapper .content{ padding:20px;}
+.footer{ padding:0 20px 20px 20px}
+.sidebar-menu{ padding:0 0 35px 0;}
+} 
+/* END__ */
+
+@media (min-width: 768px) and (max-width: 991px) {
+.login-wrapper  .form-control, .login-wrapper .btn{ height:60px;}
+.sidebar{ left:-240px; z-index:230;}
+.sidebar.active{ left:0;}
+.wrapper, .footer{ margin:0;}
+.header{ padding:0 15px;}
+.header .logo{ margin-left:30px;}
+.header .logout{margin-left:auto;}
+.wrapper{ padding:104px 30px 30px;}
+.wrapper .content{ padding:20px;}
+.footer{ padding:0 20px 20px 20px}
+.sidebar-menu{ padding:0 0 35px 0;}
+.collapse-block .btn{ display:block;}
+.collapse-block .collapse:not(.show), .collapse-block .collapse{ display:none;}
+.collapse-block .collapse.show{ display:block;}
+.collapse-block .modal-header { display:none;}
+.page-menu .nav-item{ margin:2px 0 0 0;}
+} 
+/* END__ */
+
+@media only screen and (max-width: 767px) {
+body, .form-control, .btn , .dropdown-menu, .input-group-text, .popover-header{ font-size:1rem;}
+.container {max-width:98%;}
+
+p {line-height:1.5rem}
+h1, .h1 {font-size:1.875rem;}
+h2, .h2 {font-size:1.6875rem;}
+h3, .h3 {font-size:1.4375rem;}
+h4, .h4 {font-size:1.25rem;}
+h5, .h5 {font-size:1.125rem;}
+h6, .h6 {font-size:1rem;}
+.login-wrapper  .form-control, .login-wrapper .btn{ height:60px;}
+.sidebar{ left:-240px; z-index:230;}
+.sidebar.active{ left:0;}
+.wrapper, .footer{ margin:0;}
+.header{ padding:0 20px;}
+.header .logo{ margin-left:auto;}
+.header .logout{ margin-left:auto;}
+.wrapper{ padding:102px 24px 24px;}
+.wrapper .content{ padding:20px;}
+.footer{ padding:0 20px 20px 20px}
+.header h5{ margin-left:12px; padding-left:12px;}
+.sidebar-menu{ padding:0 0 35px 0;}
+.title{ text-align:center;}
+.login-box{ padding:30px;}
+.login-wrapper{ padding:30px 0  0 0; position:relative;}
+.wrapper .box .media .media-left{ width:150px;}
+.stats .box .media{ padding:20px;}
+.collapse-block .btn{ display:block;}
+.collapse-block .collapse:not(.show), .collapse-block .collapse{ display:none;}
+.collapse-block .collapse.show{ display:block;}
+.collapse-block .modal-header { display:none;}
+.logo-big img{ width:100px;}
+.footer.d-flex{flex-wrap:wrap;  -ms-flex-pack:center !important; justify-content:center !important;}
+.footer.d-flex > *{flex:1 100%; text-align:center;}
+.page-menu .nav-item{ margin:2px 0 0 0;}
+} 
+
+/* END__ */
+
+

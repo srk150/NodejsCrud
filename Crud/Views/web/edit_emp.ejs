@@ -1,0 +1,154 @@
+<?php include('includes/header.php');?>
+
+
+<div class="wrapper">
+<div class="row">
+
+	
+
+<div class="col-lg-12 col-xl-4 mb-4">
+<div class="box-content coleql_height">
+<center>
+		<h3>Edit Employee</h3>
+	</center>
+</div>
+</div>
+</div>
+
+<!-- alert start -->
+<?php if($this->session->flashdata('success')){ ?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+<?php echo $this->session->flashdata('success'); ?>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<?php $this->session->unset_userdata('success'); } ?>
+
+<?php if($this->session->flashdata('err')){ ?>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+<?php echo $this->session->flashdata('err'); ?>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<?php $this->session->unset_userdata('err'); } ?>
+
+
+<!-- alert start -->
+
+
+<div class="row stats">
+<div class="col-md-12 col-lg-12 col-xl-12">
+
+<form action="<?php echo base_url();?>home/updEmployees" method="post">
+<div class="row stats">
+<div class="col-md-6 col-lg-6 col-xl-6">
+
+<div class="form-group">
+<input type="text" name="emp_name" value="<?php echo $empdata->emp_name; ?>" placeholder="Employee Name" maxlength="30" class="form-control">
+    <small class="text-danger"><?php echo form_error('emp_name');?></small>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-6 col-xl-6">
+
+<div class="form-group">
+<input type="email" name="email" value="<?php echo $empdata->email; ?>" placeholder="Email Address" maxlength="30" class="form-control" placeholder="EMAIL">
+    <small class="text-danger"><?php echo form_error('email');?></small>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-6 col-xl-6">
+<div class="form-group">
+<input type="password" name="password" value="<?php echo $empdata->password; ?>" class="form-control" placeholder="PASSWORD">
+<small class="text-danger"><?php echo form_error('password');?></small>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-6 col-xl-6">
+<div class="form-group">
+<input type="text" name="designation" value="<?php echo $empdata->designation; ?>" maxlength="30" class="form-control" placeholder="designation">
+    <small class="text-danger"><?php echo form_error('designation');?></small>
+
+</div>
+</div>
+
+
+
+
+<div class="col-md-6 col-lg-6 col-xl-6">
+
+<div class="form-group">
+<select class="form-control" name="departmentID">
+	<option value="">Select Department</option>
+
+	<?php 
+	foreach($departmentsData as $departmentList){ ?>
+
+    <option value="<?php echo $departmentList['departmentID'];?>" <?php echo ($empdata->departmentID == $departmentList['departmentID'])?" selected=' selected'":""?>><?php echo $departmentList['departmentname'];?></option>
+
+    <?php } ?>
+
+</select>
+
+<small class="text-danger"><?php echo form_error('departmentID');?></small>
+
+</div>
+</div>
+
+
+<div class="col-md-6 col-lg-6 col-xl-6">
+<div class="form-group">
+<select class="form-control" name="emp_type">
+	<option value="">Select Role</option>
+	<option value="user" <?php echo ($empdata->emp_type == 'user')?" selected=' selected'":""?>>User</option>
+		<?php
+		$role   = $this->session->userdata('emp_type'); 
+		if($role =='admin'){
+		?>
+
+	   <option value="admin" <?php echo ($empdata->emp_type == 'admin')?" selected=' selected'":""?>>Admin</option>
+
+	   <?php } ?>
+</select>
+<small class="text-danger"><?php echo form_error('emp_type');?></small>
+
+</div>
+</div>
+
+
+
+<div class="col-md-6 col-lg-6 col-xl-6">
+<div class="form-group">
+<input type="number" name="salary" value="<?php echo $empdata->salary; ?>" placeholder="Salary" maxlength="30" min="1" class="form-control">
+<small class="text-danger"><?php echo form_error('salary');?></small>
+
+</div>
+</div>
+
+<div class="col-md-12 col-lg-12 col-xl-12">
+
+<div class="mb-2 text-center">
+
+	<input type="hidden" name="emp_id" class="btn btn-dark" value="<?php echo $empdata->employeeID ; ?>">
+	<input type="submit" class="btn btn-dark" value="Update">
+
+</div>
+</div>
+</div>
+
+
+
+
+</form>
+
+</div>
+
+</div>
+</div>
+
+<?php include('includes/footer.php');?>

@@ -1,5 +1,7 @@
 1. create a folder using mkdir  folder name and cd go the path.
+
 2. npm init
+
 3. install npm package for dependencies .
 
 npm install express body-parser mongoose --save
@@ -17,6 +19,15 @@ npm install express-session --save
 npm install cookie-parser --save
 
 npm install connect-flash --save
+
 8. hash password
 
 npm install bcrypt
+
+9. npm install nodemon --save-dev
+
+10.npm install --save multer  for file upload
+ 11. npm install --save express-validator
+
+
+
